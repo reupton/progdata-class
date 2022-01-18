@@ -14,18 +14,18 @@ I am taking this class because I am *trying* to get better at using **R** so tha
 ## Things that I like
 
 - Outdoor activities
-      + Hiking
-      + Biking
-      + Kayaking
+      - Hiking
+      - Biking
+      - Kayaking
 - Reality TV
-      + **Love Island**
-      + Bachelor
+      - **Love Island**
+      - Bachelor
 - Food
-      + *Love* cooking
-      + Sushi is my favorite
+      - *Love* cooking
+      - Sushi is my favorite
 
 ## Random Stuff
 
-**I like this gif because Fridays are the *best* **
+*I like this gif because Fridays are the best*
 
 ![](https://c.tenor.com/-GWfQHp8RZYAAAAC/weekend-friday-feeling.gif)
