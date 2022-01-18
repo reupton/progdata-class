@@ -1,0 +1,129 @@
+---
+title: "Class Notes"
+output: word_document
+---
+
+Notes from lecture here:
+https://bwiernik.github.io/progdata-class/r_scipts.html
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r blah}
+
+sleep_times <- c(6, 9, 8, 4, 7, 6, 5, 8, 7, 8, 2.5)
+
+mean(sleep_times)
+
+```
+
+c( ) stands for concatenate, it creates a vector or string of objects
+  ### vectors must be all one type: numeric, logical (TRUE or FALSE), character, or factor
+  ### a vector us a set of values that are all one type
+  
+?mean( )
+###na.rm means remove N/A or missing values
+  
+  
+```{r multiply}
+
+minutes_sleep <- 60 * sleep_times
+
+minutes_sleep
+
+1:11 * sleep_times  ### multiplies each object in vector in sequential order
+
+rep(1, 11) ### replicate function: first place is what it is replicating, second place is how many times it is repeating
+
+```
+  
+```{r practice mean and other functions}
+
+mean(sleep_times, 0.1)
+
+mean(sleep_times, trim = 0.1) ### same thing but can remember what the heck we were doing
+
+sd(sleep_times)
+
+range(sleep_times)
+
+```
+
+```{r comparisons}
+
+sleep_times < 6 ### how many people slept less than 6 hours?
+
+sleep_times == 6
+
+sleep_times != 6  ### ! means NOT, eg. ! TRUE means not true
+
+sleep_times <= 6
+
+
+which(sleep_times < 6) ### tells you which values in the sequence meet the criteria by giving the place spot of the value eg. value in place spot of 4 (4th value in sequence) meets the criteria
+
+```
+###doing multiple comparisons
+& used for AND 
+| used for OR
+
+any()    ### set of logical vectors, is at least one of the values true?
+all()    ### set of logical vectors, are all of the values true?
+
+
+```{r compare specific stuff}
+
+results <- c(TRUE, TRUE, FALSE)
+
+correct <- c(TRUE, TRUE, FALSE)
+
+results == correct
+
+all(results == correct)
+
+```
+
+###subsetting
+Use [] to subset
+
+```{r subsetting}
+
+sleep_times[1] ### gives first value in the vector
+
+sleep_times[-1] ### gives all values except the first value
+
+sleep_times[!is.na(sleep_times)] ### give me all values expect ones that are missing
+
+na.omit(sleep_times) ### gives back vector without missing values
+
+```
+
+###modifying vectors
+
+```{r}
+
+sleep_times[2] <- NA  ### replaces second value in vector with NA
+
+sleep_times[sleep_times < 5] <- NA ### replace all values less than five with NA
+
+sleep_times
+
+```
+
+###data frames
+
+```{r data frames}
+
+nrow(mtcars)
+
+mtcars$cyl ### pulls out cylinder column as a vector
+
+mtcars[["cyl"]]  ### same ^
+
+mtcars[[2]]  ### same ^
+
+mean(mtcars[["mpg"]])
+
+```
+
