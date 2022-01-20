@@ -25,7 +25,7 @@ You should: 1. Demonstrate the use of at least three functions. 2. Write code co
 
 dat_penguins <- palmerpenguins::penguins ## assigning data frame
 
-head(dat_penguins)
+head(dat_penguins) ## show first 5 rows of data set
 
 ```
 ```{r means}
