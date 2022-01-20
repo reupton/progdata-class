@@ -4,7 +4,7 @@ My work for the class programming with data will go in this repo
 
 ## Who am I and why am I taking this class? 
 
-**Hello!** My name is Becky and I am a first year Social Psychology PhD student at USF. I am from Santa Cruz, CA (*Below* is a picture of the lighthouse right next to the coffee shop I used to work at)
+**Hello!** My name is Becky and I am a first year Social Psychology PhD student at USF. I am from Santa Cruz, CA (*Below* is a picture of Santa Cruz)
 
 ![](https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2017/09/SantaCruz_Chachi_160105-santa_cruz_harbormouth-1266-Ryan_Chachi_Craig.jpg?resize=970%2C546&ssl=1)
 
