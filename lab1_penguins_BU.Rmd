@@ -1,0 +1,47 @@
+---
+title: "Prog Data Lab 1"
+author: "Becky Upton"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load packages}
+
+library(ggplot2)
+library(tidyverse)
+
+```
+
+
+## Instructions
+
+Use some R functions to explore this data frame a bit. For example, what is the general structure of the dataset? How many rows does it have? How many colums? What are the descriptive statistics for some of the important variables?
+
+You should: 1. Demonstrate the use of at least three functions. 2. Write code comments with # describing what the functions you are using do.
+
+```{r load data}
+
+dat_penguins <- palmerpenguins::penguins ## assigning data frame
+
+head(dat_penguins)
+
+```
+```{r means}
+
+mean(dat_penguins$flipper_length_mm, na.rm = TRUE) ## gives mean flipper length
+
+mean(dat_penguins$body_mass_g, na.rm = TRUE)
+
+range(dat_penguins$flipper_length_mm, na.rm = TRUE)
+
+```
+
+
+```{r plot flippers}
+
+plot(dat_penguins$flipper_length_mm)
+
+```

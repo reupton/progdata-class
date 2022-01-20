@@ -11,6 +11,11 @@ My work for the class programming with data
 
 I am taking this class because I am *trying* to get better at using **R** so that I can use it to run analyses for my first year project.
 
+## My research interests
+- Gender scripts and how they influence
+   - behaviors within and beliefs about romantic relationships
+   - prejudice towards gender and sexual minorities
+
 ## Things that I like
 
 - Outdoor activities

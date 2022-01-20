@@ -1,0 +1,37 @@
+---
+title: "prog-data rmd practice"
+author: "Becky Upton"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load packages}
+
+library(tibble)
+
+```
+
+
+```{r cars}
+
+mtcars_tbl <- as_tibble(mtcars, rownames = "model") #rownames keeps rownames and has you label that column
+
+mtcars
+
+mtcars_tbl
+
+knitr::kable(mtcars_tbl) ## do this to use a function from a package instead of loading the whole package, if only using a few functions
+
+# knitr::kable() formats a table nicely when you knit it :)
+
+```
+
+
+# what is a tibble, what does the function do?
+- a tibble is a type of data frams
+  - gives info about what kind of variable it is (numeric)
+  - when you print a tibble it doesn't print all data, just gives overview
+  - tibble default is to delete row names

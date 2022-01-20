@@ -1,11 +1,4 @@
----
-title: "Becky prog-data rmd practice"
-output:
-  pdf_document: default
-  html_document: default
----
-
-# Notes from class on rmd
+# Notes from class on md
 
 - This is a list of things
   - dogs

@@ -1,0 +1,33 @@
+---
+title: "prog-data rmd & md notes"
+author: "Becky Upton
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# ^^^ this code makes it so when you knit it runs all the code and then knits the rest into a document with the code output
+
+# insert code chunk with command + shift + i
+
+- you can't put regular text in a code chunk
+  - you can put regular text outside of a code chunk
+  - below is the answer to a question from my second homework assignment in regression with Dr. Wiernik
+
+```{r penguin, echo=FALSE}
+
+dat_penguins <- palmerpenguins::penguins
+
+histo_penguins <- ggplot(data = dat_penguins,
+       mapping = aes(x = bill_depth_mm, fill = sex)) +
+  geom_histogram()
+
+histo_penguins
+
+```
+
+# Default For Chunk Output
+- Don't like the code output appearing inline in your rmd file?
+  - Click the gear icon and change where chunk output results appear to "in console" or leave as "inline
