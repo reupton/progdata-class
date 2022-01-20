@@ -10,7 +10,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r load packages}
 
-library(ggplot2)
 library(tidyverse)
 
 ```
