@@ -1,7 +1,6 @@
-# progdata-class
-My work for the class programming with data
+# Programming With Data Repo
 
-### I will put **all** of my work in this repo
+My work for the class programming with data will go in this repo
 
 ## Who am I and why am I taking this class? 
 
@@ -16,21 +15,9 @@ I am taking this class because I am *trying* to get better at using **R** so tha
    - behaviors within and beliefs about romantic relationships
    - prejudice towards gender and sexual minorities
 
-## Things that I like
+## Excited to learn more about R with everyone!
+   
 
-- Outdoor activities
-   - Hiking
-   - Biking
-   - Kayaking
-- Reality TV
-   - **Love Island**
-   - Bachelor
-- Food
-   - *Love* cooking
-   - Sushi is my favorite
+*Me when I realize my code wasn't running because I spelled something wrong*
 
-## Random Stuff
-
-*I like this gif because Fridays are the best*
-
-![this is a gif of snoopy dancing and the caption says let the weekend begin](https://c.tenor.com/-GWfQHp8RZYAAAAC/weekend-friday-feeling.gif)
+![this is a gif of the iconic David Rose from Schitts Creek making an annoed face](https://media3.giphy.com/media/h4I5sz6jNiRJqhX6Mc/200w.webp?cid=ecf05e47vb3onbevmswbtzbrsoqawucuufwei7z7pbhl1obm&rid=200w.webp&ct=g)
