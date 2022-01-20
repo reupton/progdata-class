@@ -28,4 +28,4 @@ I am taking this class because I am *trying* to get better at using **R** so tha
 
 *I like this gif because Fridays are the best*
 
-![](https://c.tenor.com/-GWfQHp8RZYAAAAC/weekend-friday-feeling.gif)
+![this is a gif of snoopy dancing and the caption says let the weekend begin](https://c.tenor.com/-GWfQHp8RZYAAAAC/weekend-friday-feeling.gif)
