@@ -1,0 +1,53 @@
+---
+title: "Prog Data Lab 4"
+author: "Becky Upton"
+output: html_document
+---
+```{r load packages}
+library(tidyverse)
+```
+
+```{r data}
+dictionary <- read.csv("data/green_dictionary.csv")
+green_data <- read.csv("data/green_data.csv")
+
+glimpse(dictionary)
+```
+
+## 1. Inspect the item responses (e.g., with graphs or by summarizing distinct values). Is anything unusual?
+```{r recode reverse scores}
+green_recoded <- green_data |>
+  mutate(green2 = recode(green2, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         comp6 = recode(comp6, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         comp7 = recode(comp7, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         comp8 = recode(comp8, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         comp9 = recode(comp9, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         comp10 = recode(comp10, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         intel7 = recode(intel7, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         intel8 = recode(intel8, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         intel9 = recode(intel9, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         intel10 = recode(intel10, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         open7 = recode(open7, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         open8 = recode(open8, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         open9 = recode(open9, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1),
+         open10 = recode(open10, "1" = 5, "2" = 4, "3" = 3, "4" = 2, "5" = 1))
+
+## can also do recode(green2 = 6 - green2)
+  
+```
+
+```{r summarize}
+green_recoded |>
+  rowwise() |>
+  mutate(
+    .id = id,
+    green_total = mean(c_across(green1:green5)),
+    comp_total = mean(c_across(comp1:comp10)),
+    intel_total = mean(c_across(intel1:intel10)),
+    open_total = mean(c_across(open1:open10)),
+    .before = everything()
+  )
+```
+
+
+

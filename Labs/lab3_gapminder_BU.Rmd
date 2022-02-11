@@ -1,0 +1,93 @@
+---
+title: "Prog Data Lab 3"
+author: "Becky Upton"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load packages}
+library(tidyverse)
+library(gapminder)
+```
+
+# Exercise 1
+## 1.1
+```{r filter countries in the 70's}
+gapminder |>
+  filter(country %in% c("Spain", "Sweden", "France") & year == 1970 : 1979)
+```
+For the countries I chose, there is only one row in the data that is from a year in the 1970's.
+
+## 1.2
+```{r}
+gapminder |>
+  filter(country %in% c("Spain", "Sweden", "France") & year == 1970 : 1979) |>
+  select(country, gdpPercap)
+```
+
+## 1.3
+```{r change in life expectancy}
+new_gap <- gapminder |>
+  mutate(lifeExp_change = lifeExp - lag(lifeExp)) |>
+  filter(lifeExp_change < 0) |>
+  arrange(lifeExp_change)
+
+new_gap
+```
+## 1.4
+```{r max GDP}
+gapminder |>
+  group_by(country) |> 
+  mutate(maxGDP = max(gdpPercap)) |>
+  filter(maxGDP == gdpPercap)
+```
+
+## 1.5
+```{r}
+canada <- gapminder |>
+  filter(country == "Canada")
+
+ggplot(data = canada,
+  mapping = aes(x = lifeExp, y = log(gdpPercap))) +
+  geom_point()
+```
+## 2.1
+```{r load penguins}
+dat_penguins <- palmerpenguins::penguins
+head(dat_penguins)
+```
+
+```{r penguins}
+dat_penguins|>
+  summarize(mean(flipper_length_mm, na.rm = TRUE), mean(body_mass_g, na.rm = TRUE), range(flipper_length_mm, na.rm = TRUE), range(body_mass_g, na.rm = TRUE))
+```
+```{r plot penguins}
+penguinPlot <- ggplot(data = dat_penguins,
+       mapping = aes(x = body_mass_g,
+                     y = flipper_length_mm)) +
+  geom_point()
+
+penguinPlot
+```
+
+## 2.2
+```{r more penguins}
+dat_penguins|>
+  group_by(sex) |>
+  summarize(mean(flipper_length_mm, na.rm = TRUE), range(body_mass_g, na.rm = TRUE))
+```
+```{r plot more penguins}
+ggplot(dat_penguins) +
+  aes(x = sex, y =  body_mass_g, fill = sex) +
+  geom_boxplot() +
+  geom_jitter() +
+  ggdist::stat_slab(height = .3,
+                    color = "black",
+                    size = .2,
+                    alpha = .5,
+                    position = position_nudge(y = .5))
+```
+
