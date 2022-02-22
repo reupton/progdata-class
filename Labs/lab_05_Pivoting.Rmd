@@ -1,0 +1,36 @@
+---
+title: "Prog Data Lab 5"
+author: "Becky Upton"
+output: html_document
+---
+
+```{r set up}
+library(tidyverse)
+lotr  <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/lotr_tidy.csv") |> 
+  rename(Species = Race)
+```
+
+## 1. Would you say this data is in tidy format?
+
+```{r look at data}
+head(lotr)
+```
+Yes, this data is in tidy format.
+
+## 2. Widen the data so that we see the words spoken by each species, by putting species as its own column.
+
+```{r widen words}
+lotr_wide <- lotr |> 
+  pivot_wider(id_cols = c(-Species, -Words), 
+              names_from  = Species, 
+              values_from = Words)
+```
+## 3. Re-lengthen the wide LOTR data from Question 2 above.
+
+```{r}
+lotr_wide |> 
+  pivot_longer(cols = c(Elf, Hobbit, Man), 
+               names_to  = "Species", 
+               values_to = "Words")
+```
+
