@@ -1,0 +1,72 @@
+---
+title: "Prog Data Lab 5"
+author: "Becky Upton"
+output: html_document
+---
+
+```{r, set up}
+library(tidyverse)
+
+songs <- read_csv("https://raw.githubusercontent.com/bwiernik/progdata-class/master/data/singer/songs.csv")
+locations <- read_csv("https://raw.githubusercontent.com/bwiernik/progdata-class/master/data/singer/loc.csv")
+
+(time <- as_tibble(songs) |> 
+   rename(song = title))
+
+(album <- as_tibble(locations) |> 
+   select(title, everything()) |> 
+   rename(album = release,
+          song  = title))
+```
+### Excercise 1
+## 1. We really care about the songs in time. But, for which of those songs do we know its corresponding album?
+```{r, Q1}
+time |> 
+  left_join(album, by = c("song","artist_name"))
+```
+## 2. Go ahead and add the corresponding albums to the time tibble, being sure to preserve rows even if album info is not readily available.
+```{r, Q2}
+time |> 
+  full_join(album, by = c("song", "artist_name"))
+```
+
+## 3. Which songs do we have “year”, but not album info?
+```{r, Q3}
+time |> 
+  anti_join(album, by = "song")
+```
+## 4. Which artists are in time, but not in album?
+```{r, Q4}
+time |>
+  anti_join(album, by = "artist_name")
+```
+##5. You’ve come across these two tibbles, and just wish all the info was available in one tibble. What would you do?
+```{r}
+
+```
+
+
+```{r, LOTR data}
+fell <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Fellowship_Of_The_Ring.csv")
+ttow <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Two_Towers.csv")
+retk <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Return_Of_The_King.csv")
+```
+
+### Excercise 2
+## 1. Stack these into a single tibble.
+```{r, 2Q1}
+bind_rows(
+  fell, ttow
+)
+
+bind_cols(
+  fell, ttow
+)
+```
+## 2. Which races are present in “The Fellowship of the Ring” (fell), but not in any of the other ones?
+```{r}
+fell |> 
+  FILL_THIS_IN(FILL_THIS_IN, by = "Race") |> 
+  FILL_THIS_IN(FILL_THIS_IN, by = "Race")
+```
+
