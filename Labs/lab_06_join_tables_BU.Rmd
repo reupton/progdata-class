@@ -65,9 +65,11 @@ bind_cols(
 )
 ```
 ## 2. Which races are present in “The Fellowship of the Ring” (fell), but not in any of the other ones?
-```{r}
+```{r, 2Q2}
 fell |> 
   anti_join(ttow, by = "Race") |> 
   anti_join(retk, by = "Race")
 ```
+
+
 
